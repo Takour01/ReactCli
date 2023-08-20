@@ -1,0 +1,22 @@
+{
+  "name": "reactcli",
+  "version": "1.0.0",
+  "description": "A custom CLI tool for generating React components and files",
+  "main": "index.js",
+  "bin": {
+    "reactcli": "./bin/reactCli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Takour Mohamed",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "ejs": "^3.1.5",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2"
+  }
+}
