@@ -1,10 +1,15 @@
 {
   "name": "reactcli",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A custom CLI tool for generating React components and files",
   "main": "index.js",
   "bin": {
-    "reactcli": "./bin/reactCli.js"
+    "rtk_g_c": "./bin/reactCli.js",
+    "rtk_g_p": "./bin/createPage.js",
+    "rtk_g_p_c": "./bin/pageCompontCreater.js",
+    "rtk_i": "./bin/packagesInsaller.js",
+    "rtk_new": "./bin/replcingSrc.js",
+    "rtk_r": "./bin/routeCreater.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +22,7 @@
     "commander": "^11.0.0",
     "ejs": "^3.1.5",
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.1.2"
+    "inquirer": "^8.1.2",
+    "sanitize-filename": "^1.6.1"
   }
 }

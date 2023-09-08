@@ -1,0 +1,397 @@
+@import "./fonts";
+@import "./mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", "Tajawal";
+  color: var(--col--white);
+}
+p {
+  font-family: "Inter", "Tajawal";
+}
+
+.errorText {
+  font-size: 1.1rem;
+  color: var(--col--red);
+}
+
+.holder {
+  color: var(--col--black);
+}
+
+h1 {
+  font-size: 2.2rem;
+  @include tablet {
+    font-size: 1.8rem;
+  }
+  @include phone {
+    font-size: 1.3rem;
+  }
+}
+h2 {
+  font-size: 1.8rem;
+  @include tablet {
+    font-size: 1.5rem;
+  }
+  @include phone {
+    font-size: 1.2rem;
+  }
+}
+h3 {
+  font-size: 1.6rem;
+  @include tablet {
+    font-size: 1.3rem;
+  }
+  @include phone {
+    font-size: 1.1rem;
+  }
+  @include small {
+    font-size: 1.4rem;
+    @include tablet {
+      font-size: 1.2rem;
+    }
+    @include phone {
+      font-size: 1rem;
+    }
+  }
+}
+h4 {
+  font-size: 1.4rem;
+  @include tablet {
+    font-size: 1.1rem;
+  }
+  @include phone {
+    font-size: 1rem;
+  }
+  @include small {
+    font-size: 1.2rem;
+    @include tablet {
+      font-size: 1.1rem;
+    }
+    @include phone {
+      font-size: 0.9rem;
+    }
+  }
+}
+h5 {
+  font-size: 1.2rem;
+  @include tablet {
+    font-size: 1rem;
+  }
+  @include phone {
+    font-size: 0.9rem;
+  }
+  @include small {
+    font-size: 1.1rem;
+    @include tablet {
+      font-size: 0.9rem;
+    }
+    @include phone {
+      font-size: 0.7rem;
+    }
+  }
+}
+p {
+  font-size: 1.05rem;
+  @include tablet {
+    font-size: 0.9rem;
+  }
+  @include phone {
+    font-size: 0.7rem;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  padding: 0.7em 1.5em;
+  color: var(--black);
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    outline: none;
+  }
+  &.small {
+    border-radius: 11px;
+    padding: 0.4em;
+    @include center;
+  }
+  > svg {
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+}
+
+.blue {
+  border-radius: 10px;
+  background: var(--col--main);
+  color: var(--col--white);
+  padding: 0.6em 1.5em;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: 2px solid var(--col--main);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.white {
+  background: var(--col--white);
+  border-radius: 6px;
+  color: var(--col--main);
+  padding: 0.35em 1em;
+  border: 2px solid var(--col--main);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  &.next {
+    border: none;
+    font-size: 1.3rem;
+    @include flex-c-c;
+    gap: 0.3em;
+    position: absolute;
+    right: 2em;
+    top: 1em;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    &.bottom {
+      top: calc(100% - 3em);
+      font-size: 1.2rem;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  @include tablet {
+    font-size: 1.8rem;
+  }
+  @include phone {
+    font-size: 1.5rem;
+  }
+  > span {
+    display: block;
+  }
+  &.small {
+    font-size: 2.2rem;
+    @include tablet {
+      font-size: 1.4rem;
+    }
+    @include phone {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.desc {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  /* 166.667% */
+  @include tablet {
+    font-size: 0.9rem;
+  }
+  @include phone {
+    font-size: 0.8rem;
+  }
+  &.big {
+    font-size: 1.15rem;
+    @include tablet {
+      font-size: 1.05rem;
+    }
+    @include phone {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.tag {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include tablet {
+    font-size: 1rem;
+  }
+  @include phone {
+    font-size: 0.9rem;
+  }
+}
+
+.card {
+  background: var(--col--mai-blue);
+  border-radius: 20px;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.arrow__right {
+  position: absolute;
+  bottom: 1em;
+  right: 0;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+  display: inline-block;
+  padding: 10px 20px;
+  @include flex-c-s;
+  gap: 0.3em;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  &:hover {
+    span {
+      width: 60px !important;
+    }
+  }
+  span {
+    display: inline-block;
+    width: 30px !important;
+    height: 1px !important;
+    background: var(--col--white);
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 3px;
+      top: -5px;
+      height: 7px;
+      width: 2px;
+      rotate: -50deg;
+      background: var(--col--white);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      right: 3px;
+      bottom: -5px;
+      height: 7px;
+      width: 2px;
+      rotate: 50deg;
+      background: var(--col--white);
+    }
+  }
+}
+.swiper-wrapper {
+  > button {
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+  }
+}
+.swiper-button-next {
+  &::after {
+    display: none;
+  }
+  &.disabled {
+    img {
+      opacity: 0.6;
+    }
+  }
+  img {
+    opacity: 1;
+  }
+}
+.swiper-button-prev {
+  &::after {
+    display: none;
+  }
+  &.disabled {
+    img {
+      opacity: 0.6;
+    }
+  }
+  img {
+    rotate: 180deg;
+    opacity: 1;
+  }
+  @include phone {
+    position: absolute;
+    top: 95%; /* Adjust the distance from the bottom as needed */
+  }
+}
+
+.name {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.input {
+  border-radius: 10px;
+  border: 3px solid var(--col--main);
+  background: var(--col--mai-blue);
+  font-family: "Poppins";
+  color: var(--col--white);
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0.8em;
+  &::placeholder {
+    color: var(--col--grey);
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  &:focus {
+    outline: none;
+  }
+  &__group {
+    @include col-s-s;
+    gap: 0.5em;
+  }
+  &__label {
+    color: var(--col--white);
+    text-align: justify;
+    font-family: "Poppins";
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

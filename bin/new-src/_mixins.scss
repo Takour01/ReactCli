@@ -1,0 +1,226 @@
+// width tablet size
+
+@mixin tablet {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin tablet_larg {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+//  width phone size
+
+@mixin phone {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
+// height below 680 px
+
+@mixin small {
+  @media (max-height: 680px) {
+    @content;
+  }
+}
+
+// flew mixins with params (diraction , wrap , justify-content , aligne-items)
+
+@mixin flex($dir, $wrap, $jc, $ai) {
+  display: flex;
+  @if ($dir == "r") {
+    flex-flow: row;
+  } @else {
+    flex-flow: column;
+  }
+  @if ($wrap == "w") {
+    flex-wrap: wrap;
+  } @else {
+    flex-wrap: nowrap;
+  }
+  @if ($jc == "c") {
+    justify-content: center;
+  } @else if ($jc == "s") {
+    justify-content: flex-start;
+  } @else if ($jc == "e") {
+    justify-content: flex-end;
+  } @else if ($jc == "sb") {
+    justify-content: space-between;
+  } @else if ($jc == "sr") {
+    justify-content: space-around;
+  } @else {
+    justify-content: space-evenly;
+  }
+  @if ($ai == "s") {
+    align-items: flex-start;
+  } @else if ($ai == "e") {
+    align-items: flex-end;
+  } @else {
+    align-items: center;
+  }
+}
+
+// flex row
+
+@mixin flex-c-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-c-s {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@mixin flex-s-s {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@mixin flex-s-sb {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@mixin flex-c-e {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@mixin col-c-s {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+@mixin col-c-c {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex colomn
+
+@mixin col-c-e {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+@mixin col-s-s {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@mixin col-s-e {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+@mixin col-s-sb {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@mixin col-e-s {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+@mixin col-e-e {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+@mixin col-e-c {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+@mixin col-s-c {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+// center
+
+@mixin center {
+  display: grid;
+  place-items: center;
+}
+
+// scrollbar off
+
+@mixin noScrollbar {
+  -ms-overflow-style: none; /* Internet Explorer and Microsoft Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
+// to make long words collaps
+
+@mixin words-colaps {
+  /* For modern browsers */
+  overflow-wrap: break-word;
+
+  /* For older browsers (backup option) */
+  word-wrap: break-word;
+}
+
+// to limit the numbers of lines
+
+@mixin limited-lines($lines, $line-height) {
+  @if ($line-height != "") {
+    line-height: $line-height; /* Adjust the line height as needed */
+    max-height: $line-height *
+      $lines; /* Adjust the maximum height based on the desired number of lines (line-height x number of lines) */
+  } @else {
+    line-height: 1.2; /* Adjust the line height as needed */
+    max-height: 1.2em *
+      $lines; /* Adjust the maximum height based on the desired number of lines (line-height x number of lines) */
+  }
+  overflow: hidden;
+}
+
+// for the x scroll
+
+@mixin x-scroll {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Enable horizontal snap scrolling */
+  scroll-behavior: smooth; /* Enable smooth scrolling to snap points */
+}
+
+@mixin x-scroll-item {
+  scroll-snap-align: start; /* Snap each item to the start of the container */
+}
+
+
+
+@mixin paddings {
+    padding-inline: var(--pc--padding);
+    @include tablet{
+    padding-inline: var(--tablet--padding);
+    }
+    @include phone{
+    padding-inline: var(--phone--padding);
+    }
+}

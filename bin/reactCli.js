@@ -18,7 +18,7 @@ inquirer
   ])
   .then((answers) => {
     const componentName = answers.componentName;
-    const componentDir = path.join(process.cwd(), componentName);
+    const componentDir = path.join(process.cwd(),"src","views","Components", componentName);
 
     // Create a directory based on the component name
     fs.mkdirSync(componentDir);
@@ -35,7 +35,7 @@ inquirer
       },
       {
         template: 'styles.scss',
-   destination: `${componentName.toLowerCase()}.scss`, 
+        destination: `${componentName}.scss`,
       },
     ];
 
@@ -51,6 +51,13 @@ inquirer
     });
 
     console.log(chalk.green('Component created successfully!'));
+
+    // Update the components index.js file
+    const componentsIndexPath = path.join(process.cwd(),"src","views","Components", 'index.js');
+    const exportStatement = `export { default as ${componentName} } from "./${componentName}/${componentName}";\n`;
+
+    fs.appendFileSync(componentsIndexPath, exportStatement);
+    console.log(chalk.green(`Export statement added to components/index.js for ${componentName}.`));
   })
   .catch((error) => {
     console.error(chalk.red('Error:', error));

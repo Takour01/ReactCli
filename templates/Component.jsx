@@ -1,9 +1,9 @@
 import React from 'react';
-import './<%= componentName %>.scss';
-import <%= componentName %>ViewModel from './<%= componentName %>VM';
+import './<%= componentName.toLowerCase() %>.scss';
+import useViewModel from './<%= componentName %>VM';
 
 const <%= componentName %> = () => {
-  const data = <%= componentName %>ViewModel()
+  const data = useViewModel()
   return (
     <div className="<%= componentName.toLowerCase() %>">
       <h1><%= componentName %> Component</h1>
